@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         Parent root =
-                FXMLLoader.load(getClass().getResource("/VerticalBox.fxml"));
+                FXMLLoader.load(getClass().getResource("/RootView.fxml"));
 
         primaryStage.setScene(new Scene(root, 600, 350));
         primaryStage.show();
