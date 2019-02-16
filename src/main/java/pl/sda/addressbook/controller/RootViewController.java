@@ -2,12 +2,12 @@ package pl.sda.addressbook.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import pl.sda.addressbook.model.Person;
 import pl.sda.addressbook.view.PersonView;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -51,8 +51,10 @@ public class RootViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        PersonView personView = new PersonView();
-        personTableView.setItems(personView.getPersonList());
+//        PersonView personView = new PersonView();
+//        personTableView.setItems(personView.getPersonList());
+        nameCol.setCellValueFactory(c -> c.getValue().nameProperty());
+        lastName.setCellValueFactory(c ->c.getValue().lastnameProperty());
 
     }
 

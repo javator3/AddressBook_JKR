@@ -70,18 +70,18 @@ public class PersonView {
 
 
 
-    public void loadNewPersonView(){
-
-        try {
-            Parent root = FXMLLoader.
-                    load(getClass().
-                            getResource("/NewPerson.fxml"));
-            primaryStage.setScene(new Scene(root, 700, 400));
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void loadNewPersonView(){
+//
+//        try {
+//            Parent root = FXMLLoader.
+//                    load(getClass().
+//                            getResource("/NewPerson.fxml"));
+//            primaryStage.setScene(new Scene(root, 700, 400));
+//            primaryStage.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 
 }
