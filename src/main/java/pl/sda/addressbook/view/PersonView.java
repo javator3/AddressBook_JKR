@@ -5,11 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.sda.addressbook.controller.RootViewController;
 import pl.sda.addressbook.model.Person;
 
 import java.io.IOException;
 
 public class PersonView {
+
+    public PersonView(){}
 
     private ObservableList<Person> personList=
             FXCollections.observableArrayList();
@@ -28,19 +31,45 @@ public class PersonView {
 
     }
 
+    public ObservableList<Person> getPersonList() {
+        return personList;
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
     public void loadView() {
-        //zaladować i wyswietlic widok rootview
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/RootView.fxml"));
 
         try {
-            Parent root = FXMLLoader.
-                    load(getClass().
-                            getResource("/RootView.fxml"));
-            primaryStage.setScene(new Scene(root, 600, 300));
-            primaryStage.show();
+            loader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Parent parent = loader.getRoot();
+
+        primaryStage.setScene(new Scene(parent, 600, 400));
+        RootViewController rootViewController = loader.getController();
+        rootViewController.setPersonView(this);
+        primaryStage.show();
+
+//        try {
+//            Parent root = FXMLLoader.
+//                    load(getClass().
+//                            getResource("/RootView.fxml"));
+//            primaryStage.setScene(new Scene(root, 600, 300));
+//            primaryStage.show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
+
+
+
     public void loadNewPersonView(){
 
         try {

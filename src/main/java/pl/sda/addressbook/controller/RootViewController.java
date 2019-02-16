@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import pl.sda.addressbook.model.Person;
+import pl.sda.addressbook.view.PersonView;
 
 import java.awt.*;
 import java.net.URL;
@@ -30,14 +31,6 @@ public class RootViewController implements Initializable {
     @FXML
     private Label showTel;
 
-
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
     @FXML
     private TableView<Person> personTableView;
 
@@ -46,5 +39,24 @@ public class RootViewController implements Initializable {
 
     @FXML
     private TableColumn<Person, String> lastName;
+
+    private PersonView personView;
+
+    public void setPersonView(PersonView personView){
+        this.personView = personView;
+        personTableView.setItems(personView.getPersonList());
+
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        PersonView personView = new PersonView();
+        personTableView.setItems(personView.getPersonList());
+
+    }
+
+
+
 
 }
