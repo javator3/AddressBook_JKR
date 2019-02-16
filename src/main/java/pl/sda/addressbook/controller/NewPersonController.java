@@ -9,24 +9,29 @@ import java.util.ResourceBundle;
 
 public class NewPersonController implements Initializable {
 
+    @FXML
+    private TextField showPname;
 
     @FXML
-    private Label pname;
+    private TextField showPlastname;
 
     @FXML
-    private Label plastname;
+    private TextField showPstreet;
 
     @FXML
-    private Label pstreet;
+    private TextField showPcity;
 
     @FXML
-    private Label pcity;
+    private TextField showPpostcode;
 
     @FXML
-    private Label ppostcode;
+    private TextField showPtel;
 
     @FXML
-    private Label ptel;
+    private Button save;
+
+    @FXML
+    private Button cancel;
 
 
 
