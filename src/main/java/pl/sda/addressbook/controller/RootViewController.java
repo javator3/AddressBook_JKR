@@ -1,5 +1,6 @@
 package pl.sda.addressbook.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -59,6 +60,7 @@ public class RootViewController implements Initializable {
     }
 
 
-
-
+    public void loadNewPerson(ActionEvent actionEvent) {
+        personView.loadNewPersonView();
+    }
 }
