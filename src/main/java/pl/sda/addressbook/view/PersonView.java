@@ -86,7 +86,7 @@ public class PersonView {
 
         Stage personStage = new Stage();
 
-        personStage.setScene(new Scene(parent, 600, 400));
+        personStage.setScene(new Scene(parent, 700, 400));
         personStage.show();
 
         NewPersonController newPersonController = loader.getController();

@@ -49,8 +49,8 @@ public class NewPersonController implements Initializable {
 
     public void savePerson(ActionEvent actionEvent) {
 
-        personView.getPersonList().add(new Person(" ", " "," ",
-                " ", " ", " "));
+        personView.getPersonList().add(new Person(showPname.getText(), showPlastname.getText(), showPstreet.getText(),
+        showPcity.getText(), showPpostcode.getText(), showPtel.getText()));
     }
 
     public void setPersonView(PersonView personView) {
