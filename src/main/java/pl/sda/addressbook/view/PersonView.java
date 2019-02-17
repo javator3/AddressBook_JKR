@@ -125,6 +125,35 @@ public class PersonView {
 
     }
 
+    public void loadPersonEdit(Person person, int index){
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/NewPerson.fxml"));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent parent = loader.getRoot();
+
+        newPersonStage = new Stage();
+
+        newPersonStage.setScene(new Scene(parent, 700, 400));
+        newPersonStage.show();
+
+        NewPersonController newPersonController = loader.getController();
+        newPersonController.setPersonView(this);
+        newPersonController.setPerson(person);
+        newPersonController.setIndex(index);
+
+
+
+
+
+    }
+
 
 
 }
