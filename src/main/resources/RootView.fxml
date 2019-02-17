@@ -68,7 +68,7 @@
                                     <Button onAction="#loadNewPerson" layoutX="34.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="New" />
                                     <Button layoutX="137.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="Edit" />
                                     <Button layoutX="235.0" layoutY="328.0" mnemonicParsing="false" text="Delete" />
-                                    <Button  layoutX="343.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="Save" />
+                                    <Button onAction="#saveToJason" layoutX="343.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="Save" />
                                  </children>
                               </AnchorPane>
                            </children>
