@@ -2,10 +2,14 @@ package pl.sda.addressbook.model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
 public class Person {
+
 
     private StringProperty name;
     private StringProperty lastname;
@@ -24,6 +28,7 @@ public class Person {
         this.postcode = new SimpleStringProperty (postcode);
         this.telephone = new SimpleStringProperty (telephone);
     }
+
 
     public String getName() {
         return name.get();

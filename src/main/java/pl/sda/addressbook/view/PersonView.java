@@ -24,7 +24,11 @@ public class PersonView {
             FXCollections.observableArrayList();
 
     private Stage primaryStage;
+    public Stage newPersonStage;
 
+    public Stage getNewPersonStage() {
+        return newPersonStage;
+    }
 
     public PersonView(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -106,10 +110,15 @@ public class PersonView {
 
         Parent parent = loader.getRoot();
 
-        Stage personStage = new Stage();
+//        Stage personStage = new Stage();
 
-        personStage.setScene(new Scene(parent, 700, 400));
-        personStage.show();
+        newPersonStage = new Stage();
+
+        newPersonStage.setScene(new Scene(parent, 700, 400));
+        newPersonStage.show();
+
+//        personStage.setScene(new Scene(parent, 700, 400));
+//        personStage.show();
 
         NewPersonController newPersonController = loader.getController();
         newPersonController.setPersonView(this);

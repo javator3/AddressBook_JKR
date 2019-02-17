@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import pl.sda.addressbook.model.Person;
 import pl.sda.addressbook.view.PersonView;
 
@@ -35,7 +36,7 @@ public class NewPersonController implements Initializable {
     private Button save;
 
     @FXML
-    private Button cancel;
+    private Button close;
 
 
 
@@ -56,6 +57,14 @@ public class NewPersonController implements Initializable {
     public void setPersonView(PersonView personView) {
         this.personView = personView;
 
+
+    }
+
+    public void closeButton (javafx.event.ActionEvent actionEvent){
+        personView.getNewPersonStage().close();
+
+//        Stage stage = (Stage) closeButton.getScene().getWindow();
+//        stage.close();
 
     }
 }
