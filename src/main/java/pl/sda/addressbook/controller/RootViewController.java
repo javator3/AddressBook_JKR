@@ -1,6 +1,8 @@
 package pl.sda.addressbook.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -64,6 +66,8 @@ public class RootViewController implements Initializable {
         nameCol.setCellValueFactory(c -> c.getValue().nameProperty());
         lastName.setCellValueFactory(c ->c.getValue().lastnameProperty());
 
+
+
     }
 
 
@@ -84,5 +88,7 @@ public class RootViewController implements Initializable {
 
 
     }
+
+
 
 }

@@ -1,4 +1,6 @@
 package pl.sda.addressbook.view;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -8,14 +10,17 @@ import javafx.stage.Stage;
 import pl.sda.addressbook.controller.NewPersonController;
 import pl.sda.addressbook.controller.RootViewController;
 import pl.sda.addressbook.model.Person;
+import pl.sda.addressbook.model.PersonString;
 
+import java.io.File;
 import java.io.IOException;
 
 public class PersonView {
 
-    public PersonView(){}
+    public PersonView() {
+    }
 
-    private ObservableList<Person> personList=
+    private ObservableList<Person> personList =
             FXCollections.observableArrayList();
 
     private Stage primaryStage;
@@ -23,12 +28,30 @@ public class PersonView {
 
     public PersonView(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        personList.add(new Person("Jan", "Kowalski", "Kwiatowa", "Warszawa",
-                "12-12", "78 697"));
-        personList.add(new Person("Anna", "Nowak", "Długa", "kraków",
-        "34-34","67 890"));
-        personList.add(new Person("Maria", "Wiśniewska", "Bajkowa", "Poznań",
-                "56-34", "876 098"));
+//        personList.add(new Person("Jan", "Kowalski", "Kwiatowa", "Warszawa",
+//                "12-12", "78 697"));
+//        personList.add(new Person("Anna", "Nowak", "Długa", "kraków",
+//                "34-34", "67 890"));
+//        personList.add(new Person("Maria", "Wiśniewska", "Bajkowa", "Poznań",
+//                "56-34", "876 098"));
+
+
+        ObjectMapper mapper = new ObjectMapper();
+        File file = new File("personList");
+
+        PersonString[] person = null;
+
+        try {
+            person = mapper.readValue(file, PersonString[].class);
+
+            for (PersonString personString : person) {
+                personList.add(new Person(personString.getName(), personString.getLastname(), personString.getStreet(),
+                        personString.getCity(), personString.getPostcode(), personString.getTelephone()));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -70,8 +93,7 @@ public class PersonView {
     }
 
 
-
-    public void loadNewPersonView(){
+    public void loadNewPersonView() {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/NewPerson.fxml"));
@@ -91,8 +113,6 @@ public class PersonView {
 
         NewPersonController newPersonController = loader.getController();
         newPersonController.setPersonView(this);
-
-
 
 
     }
