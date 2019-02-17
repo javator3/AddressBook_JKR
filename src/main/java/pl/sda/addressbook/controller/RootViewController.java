@@ -10,7 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import pl.sda.addressbook.model.Person;
+import pl.sda.addressbook.model.PersonString;
 import pl.sda.addressbook.view.PersonView;
 
 import java.io.File;
@@ -47,8 +49,7 @@ public class RootViewController implements Initializable {
     @FXML
     private TableColumn<Person, String> lastName;
 
-    @FXML
-    private Button saveToJason;
+
 
     private PersonView personView;
 
@@ -65,6 +66,9 @@ public class RootViewController implements Initializable {
 //        personTableView.setItems(personView.getPersonList());
         nameCol.setCellValueFactory(c -> c.getValue().nameProperty());
         lastName.setCellValueFactory(c ->c.getValue().lastnameProperty());
+
+//        personTableView.getSelectionModel().selectedItemProperty().addListener(observable, oldField, newField)
+//        ->viewPersonInfoOnLabel(newField);
 
 
 
@@ -90,5 +94,28 @@ public class RootViewController implements Initializable {
     }
 
 
+    public void selectPerson(MouseEvent mouseEvent) {
+        Person person = personTableView.getSelectionModel().getSelectedItem();
 
+        int index = personTableView.getSelectionModel().getFocusedIndex();
+        showName.setText(person.getName());
+        showLastname.setText(person.getLastname());
+        showStreet.setText(person.getStreet());
+        showCity.setText(person.getCity());
+        showPostcode.setText(person.getPostcode());
+        showTel.setText(person.getTelephone());
+
+    }
+
+//    public void editPerson(ActionEvent actionEvent) {
+//        int index = personTableView.getSelectionModel().getFocusedIndex();
+//        Person person = personTableView.getSelectionModel().getSelectedItem();
+//        personView.loadPersonEdit(person, index);
+//    }
+
+    public void DeletePerson(javafx.event.ActionEvent actionEvent) {
+        int index = personTableView.getSelectionModel().getFocusedIndex();
+        personView.getPersonList().remove(index);
+
+    }
 }

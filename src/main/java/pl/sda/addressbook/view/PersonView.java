@@ -123,8 +123,8 @@ public class PersonView {
         NewPersonController newPersonController = loader.getController();
         newPersonController.setPersonView(this);
 
-
     }
+
 
 
 }

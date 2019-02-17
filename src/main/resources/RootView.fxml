@@ -23,7 +23,7 @@
                            <children>
                               <AnchorPane layoutX="-13.0" layoutY="45.0" prefHeight="373.0" prefWidth="187.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <TableView fx:id="personTableView" layoutX="-13.0" layoutY="41.0" prefHeight="398.0" prefWidth="187.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <TableView onMouseClicked="#selectPerson" fx:id="personTableView" layoutX="-13.0" layoutY="41.0" prefHeight="398.0" prefWidth="187.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                       <columns>
                                         <TableColumn fx:id="nameCol" prefWidth="88.0" text="Name" />
                                         <TableColumn fx:id="lastName" prefWidth="98.0" text="Lastname" />
@@ -66,8 +66,8 @@
                                        </children>
                                     </GridPane>
                                     <Button onAction="#loadNewPerson" layoutX="34.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="New" />
-                                    <Button layoutX="137.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="Edit" />
-                                    <Button layoutX="235.0" layoutY="328.0" mnemonicParsing="false" text="Delete" />
+                                    <Button  layoutX="137.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="Edit" />
+                                    <Button onAction="#DeletePerson" layoutX="235.0" layoutY="328.0" mnemonicParsing="false" text="Delete" />
                                     <Button onAction="#saveToJason" layoutX="343.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="48.0" text="Save" />
                                  </children>
                               </AnchorPane>
