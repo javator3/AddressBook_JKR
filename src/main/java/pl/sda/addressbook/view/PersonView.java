@@ -141,12 +141,15 @@ public class PersonView {
         newPersonStage = new Stage();
 
         newPersonStage.setScene(new Scene(parent, 700, 400));
+        newPersonStage.setTitle("Edit person");
         newPersonStage.show();
 
         NewPersonController newPersonController = loader.getController();
-        newPersonController.setPersonView(this);
         newPersonController.setPerson(person);
         newPersonController.setIndex(index);
+        newPersonController.setPersonView(this);
+
+
 
 
 

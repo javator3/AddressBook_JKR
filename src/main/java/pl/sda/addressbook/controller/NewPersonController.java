@@ -56,11 +56,20 @@ public class NewPersonController implements Initializable {
 
     public void savePerson(ActionEvent actionEvent) {
 
-        Person person = personView.getPersonList().get(index);
-        person.setName(showPname.getText());
+//        Person person = personView.getPersonList().get(getIndex());
+//        person.setName(showPname.getText());
+//        person.setLastname(showPlastname.getText());
+//        person.setStreet(showPstreet.getText());
+//        person.setCity(showPcity.getText());
+//        person.setPostcode(showPpostcode.getText());
+//        person.setTelephone(showPtel.getText());
 
-//        personView.getPersonList().add(new Person(showPname.getText(), showPlastname.getText(), showPstreet.getText(),
-//        showPcity.getText(), showPpostcode.getText(), showPtel.getText()));
+
+        personView.getPersonList().add(new Person(showPname.getText(), showPlastname.getText(), showPstreet.getText(),
+        showPcity.getText(), showPpostcode.getText(), showPtel.getText()));
+
+        Stage stage = (Stage) save.getScene().getWindow();
+        stage.close();
     }
 
     public void setPersonView(PersonView personView) {
@@ -79,6 +88,11 @@ public class NewPersonController implements Initializable {
 
     public void setPerson(Person person){
         showPname.setText(person.getName());
+        showPlastname.setText(person.getLastname());
+        showPstreet.setText(person.getStreet());
+        showPcity.setText(person.getCity());
+        showPpostcode.setText(person.getPostcode());
+        showPtel.setText(person.getTelephone());
     }
 
     public void setIndex(int index){

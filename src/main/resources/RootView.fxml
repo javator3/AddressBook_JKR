@@ -57,12 +57,12 @@
                                           <Label fx:id="city" text="City" GridPane.rowIndex="3" />
                                           <Label fx:id="postcode" text="Postcode" GridPane.rowIndex="4" />
                                           <Label fx:id="tel" text="Telephone" GridPane.rowIndex="5" />
-                                          <Label fx:id="showName" text="Label" GridPane.columnIndex="1" />
-                                          <Label fx:id="showLastname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                          <Label fx:id="showStreet" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <Label fx:id="showCity" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label fx:id="showPostcode" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label fx:id="showTel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label fx:id="showName" text=" " GridPane.columnIndex="1" />
+                                          <Label fx:id="showLastname" text=" " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label fx:id="showStreet" text=" " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label fx:id="showCity" text=" " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label fx:id="showPostcode" text=" " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label fx:id="showTel" text=" " GridPane.columnIndex="1" GridPane.rowIndex="5" />
                                        </children>
                                     </GridPane>
                                     <Button onAction="#loadNewPerson" layoutX="34.0" layoutY="328.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="New" />

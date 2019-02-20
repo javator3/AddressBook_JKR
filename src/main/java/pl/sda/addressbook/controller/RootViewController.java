@@ -111,6 +111,7 @@ public class RootViewController implements Initializable {
         int index = personTableView.getSelectionModel().getFocusedIndex();
         Person person = personTableView.getSelectionModel().getSelectedItem();
         personView.loadPersonEdit(person, index);
+        personView.getPersonList().remove(index);
     }
 
     public void DeletePerson(javafx.event.ActionEvent actionEvent) {
